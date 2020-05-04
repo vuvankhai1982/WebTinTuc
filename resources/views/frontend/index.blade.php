@@ -1,100 +1,387 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-        <title>Laravel</title>
+<head>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+    <title>Web Tin Tức</title>
 
-            .full-height {
-                height: 100vh;
-            }
+    <!-- Bootstrap Core CSS -->
+    <link href="/frontend/css/bootstrap.min.css" rel="stylesheet">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+    <!-- Custom CSS -->
+    <link href="/frontend/css/shop-homepage.css" rel="stylesheet">
+    <link href="/frontend/css/my.css" rel="stylesheet">
 
-            .position-ref {
-                position: relative;
-            }
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+</head>
 
-            .content {
-                text-align: center;
-            }
+<body>
 
-            .title {
-                font-size: 84px;
-            }
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Web Tin Tức</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">Giới thiệu</a>
+                </li>
+                <li>
+                    <a href="#">Liên hệ</a>
+                </li>
+            </ul>
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+        </div>
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- slider -->
+    <div class="row carousel-holder">
+        <div class="col-md-12">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img class="slide-image" src="/frontend/image/800x300.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img class="slide-image" src="/frontend/image/800x300.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img class="slide-image" src="/frontend/image/800x300.png" alt="">
+                    </div>
                 </div>
-            @endif
+                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- end slide -->
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Hello Web Tin Tuc
+    <div class="space20"></div>
+
+
+    <div class="row main-left">
+        <div class="col-md-3 ">
+            <ul class="list-group" id="menu">
+                <li href="#" class="list-group-item menu1 active">
+                    Menu
+                </li>
+                <li href="#" class="list-group-item menu1">
+                    <a href="#">Giải Trí</a>
+                </li>
+                <li href="#" class="list-group-item menu1">
+                    <a href="#">Giáo Dục</a>
+                </li>
+                <li href="#" class="list-group-item menu1">
+                    <a href="#">Thể Thao</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background-color:#337AB7; color:white;" >
+                    <h2 style="margin-top:0px; margin-bottom:0px;">Tin Tức</h2>
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="panel-body">
+                    <!-- item -->
+                    <div class="row-item row">
+                        <h3>
+                            <a href="category.html">Category</a> |
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                        </h3>
+                        <div class="col-md-8 border-right">
+                            <div class="col-md-5">
+                                <a href="detail.html">
+                                    <img class="img-responsive" src="/frontend/image/320x150.png" alt="">
+                                </a>
+                            </div>
+
+                            <div class="col-md-7">
+                                <h3>Project Five</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident .</p>
+                                <a class="btn btn-primary" href="detail.html">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <a href="detail.html">
+                                <h4>
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </h4>
+                            </a>
+
+                            <a href="detail.html">
+                                <h4>
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </h4>
+                            </a>
+
+                            <a href="detail.html">
+                                <h4>
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </h4>
+                            </a>
+
+                            <a href="detail.html">
+                                <h4>
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </h4>
+                            </a>
+                        </div>
+
+                        <div class="break"></div>
+                    </div>
+                    <!-- end item -->
+                    <!-- item -->
+                    <div class="row-item row">
+                        <h3><a href="category.html">Category</a> |
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                        </h3>
+                        <div class="col-md-8 border-right">
+                            <div class="col-md-5">
+                                <a href="detail.html">
+                                    <img class="img-responsive" src="/frontend/image/320x150.png" alt="">
+                                </a>
+                            </div>
+                            <div class="col-md-7">
+                                <h3>Project Five</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident .</p>
+                                <a class="btn btn-primary" href="detail.html">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <a href="detail.html">
+                                <h4>
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </h4>
+                            </a>
+
+                            <a href="detail.html">
+                                <h4>
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </h4>
+                            </a>
+
+                            <a href="detail.html">
+                                <h4>
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </h4>
+                            </a>
+
+                            <a href="detail.html">
+                                <h4>
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </h4>
+                            </a>
+                        </div>
+
+
+
+                        <div class="break"></div>
+                    </div>
+                    <!-- end item -->
+                    <!-- item -->
+                    <div class="row-item row">
+                        <h3><a href="category.html">Category</a> |
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                        </h3>
+                        <div class="col-md-8 border-right">
+                            <div class="col-md-5">
+                                <a href="detail.html">
+                                    <img class="img-responsive" src="/frontend/image/320x150.png" alt="">
+                                </a>
+                            </div>
+                            <div class="col-md-7">
+                                <h3>Project Five</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident .</p>
+                                <a class="btn btn-primary" href="detail.html">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <a href="detail.html">
+                                <h4>
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </h4>
+                            </a>
+
+                            <a href="detail.html">
+                                <h4>
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </h4>
+                            </a>
+
+                            <a href="detail.html">
+                                <h4>
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </h4>
+                            </a>
+
+                            <a href="detail.html">
+                                <h4>
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </h4>
+                            </a>
+                        </div>
+
+
+
+                        <div class="break"></div>
+                    </div>
+                    <!-- end item -->
+                    <!-- item -->
+                    <div class="row-item row">
+                        <h3><a href="category.html">Category</a> |
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                        </h3>
+                        <div class="col-md-8 border-right">
+                            <div class="col-md-5">
+                                <a href="detail.html">
+                                    <img class="img-responsive" src="/frontend/image/320x150.png" alt="">
+                                </a>
+                            </div>
+                            <div class="col-md-7">
+                                <h3>Project Five</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, quo, minima, inventore voluptatum saepe quos nostrum provident .</p>
+                                <a class="btn btn-primary" href="detail.html">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <a href="detail.html">
+                                <h4>
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </h4>
+                            </a>
+
+                            <a href="detail.html">
+                                <h4>
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </h4>
+                            </a>
+
+                            <a href="detail.html">
+                                <h4>
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </h4>
+                            </a>
+
+                            <a href="detail.html">
+                                <h4>
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </h4>
+                            </a>
+                        </div>
+
+
+
+                        <div class="break"></div>
+                    </div>
+                    <!-- end item -->
+
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+    <!-- /.row -->
+</div>
+<!-- end Page Content -->
+
+<!-- Footer -->
+<hr>
+<footer>
+    <div class="row">
+        <div class="col-md-12">
+            <p>Copyright &copy; Your Website 2014</p>
+        </div>
+    </div>
+</footer>
+<!-- end Footer -->
+<!-- jQuery -->
+<script src="/frontend/js/jquery.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="/frontend/js/bootstrap.min.js"></script>
+<script src="/frontend/js/my.js"></script>
+
+</body>
+
 </html>
