@@ -16,6 +16,10 @@ class HomeController extends Controller
     public function detail(){
         return view('frontend.detail');
     }
-
-
+    public function lienhe(){
+        return view('frontend.lienhe');
+    }
+    public function gioithieu(){
+        return view('frontend.gioithieu');
+    }
 }
