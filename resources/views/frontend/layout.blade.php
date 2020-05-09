@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>Web Tin Tức</title>
-
+    <link href="/frontend/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Core CSS -->
     <link href="/frontend/css/bootstrap.min.css" rel="stylesheet">
 

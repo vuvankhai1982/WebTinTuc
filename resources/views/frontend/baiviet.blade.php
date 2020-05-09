@@ -4,13 +4,15 @@
     <div class="container">
         <div class="row">
 
+        @foreach($posts as $post)
             <!-- Blog Post Content Column -->
             <div class="col-lg-9">
+
 
                 <!-- Blog Post -->
 
                 <!-- Title -->
-                <h1>Blog Post Title</h1>
+                <h1>{{$post->tieu_de}}</h1>
 
                 <!-- Author -->
                 <p class="lead">
@@ -18,7 +20,7 @@
                 </p>
 
                 <!-- Preview Image -->
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                <img class="img-responsive" src="{{$post->}}" alt="">
 
                 <!-- Date/Time -->
                 <p><span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM</p>
@@ -31,7 +33,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
                  </div>
-
+                 @endforeach
             <!-- Blog Sidebar Widgets Column -->
             <div class="col-md-3">
 

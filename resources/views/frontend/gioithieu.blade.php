@@ -38,7 +38,7 @@
 
 
         <div class="row main-left">
-            @include('frontend.menu_left')
+            @include('frontend.menu')
             <div class="col-md-9">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="background-color:#337AB7; color:white;" >

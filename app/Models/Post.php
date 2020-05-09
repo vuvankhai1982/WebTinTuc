@@ -18,10 +18,10 @@ class Post extends Model
         'image',
         'image_url',
         'thumbnail_image',
-        'noi bat',
-        'users_id',
-        'tom tat',
-        'noi dung',
+        'noi_bat',
+        'user_id',
+        'tom_tat',
+        'noi_dung',
     ];
 
     public function tags()
