@@ -16,9 +16,5 @@ return [
             'Giới thiệu' => 2,
             'Liên hệ' => 3,
         ],
-        'noi bat' => [
-            'Nháp' => 2,
-            'Công bố' => 1,
-        ],
     ],
 ];

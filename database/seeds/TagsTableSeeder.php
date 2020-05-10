@@ -15,7 +15,6 @@ class TagsTableSeeder extends Seeder
             ['name' => 'Giải Trí'],
             ['name' => 'Giáo Dục'],
             ['name' => 'Thể Thao'],
-
         ]);
     }
 

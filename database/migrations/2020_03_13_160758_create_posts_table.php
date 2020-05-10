@@ -16,17 +16,13 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('tieu_de');
-            $table->text('tom_tat')->nullable();
-            $table->text('noi_dung')->nullable();
+            $table->string('title');
+            $table->text('short_content')->nullable();
+            $table->text('content')->nullable();
             $table->unsignedTinyInteger('status_id');
             $table->unsignedTinyInteger('type_id');
-            $table->unsignedTinyInteger('noi_bat');
             $table->unsignedBigInteger('user_id');
-            $table->string('image')->nullable();
             $table->string('image_url')->nullable();
-            $table->string('thumbnail_image')->nullable();
-
 
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
