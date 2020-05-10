@@ -16,9 +16,18 @@ class HomeController extends Controller
         view()->share(compact('posts'));
     }
 
-    public function trangchu(){
+    public function trangchu()
+    {
+        $giaoDucTag = Tag::find(2);
+        $baiVietGiaoDuc = Post::whereHas('tags', function ($query) {
+            $query->where('tag_id', 2);
+        })->orderBy('created_at', 'desc')->limit(4)->get();
 
-        return view('frontend.trangchu');
+        $baiVietGiaiTri = Post::whereHas('tags', function ($query) {
+            $query->where('tag_id', 1);
+        })->orderBy('created_at', 'desc')->limit(4)->get();
+
+        return view('frontend.trangchu', compact('baiVietGiaoDuc', 'baiVietGiaiTri', 'giaoDucTag'));
     }
 
     public function theloai()
