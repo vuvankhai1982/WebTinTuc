@@ -105,8 +105,18 @@ class HomeController extends Controller
         $baiVietGiaoDuc = Post::whereHas('tags', function ($query) {
             $query->where('tag_id', 2);
         })->orderBy('created_at', 'desc')->limit(4)->get();
-
-        return view('frontend.trangchu', compact('baiVietGiaoDuc', 'baiVietGiaiTri', 'giaoDucTag'));
+//        -------------------------------------------------
+              $giaiTriTag = Tag::find(1);
+              $baiVietGiaiTri = Post::whereHas('tags', function ($query) {
+                  $query->where('tag_id', 1);
+              })->orderBy('created_at', 'desc')->limit(4)->get();
+//              ------------------------------------------------
+              $theThaoTag = Tag::find(3);
+              $baiVietTheThao = Post::whereHas('tags', function ($query) {
+                  $query->where('tag_id', 3);
+              })->orderBy('created_at', 'desc')->limit(4)->get();
+        return view('frontend.trangchu', compact('baiVietGiaoDuc', 'baiVietGiaiTri', 'giaoDucTag',
+            'giaiTriTag', 'theThaoTag', 'baiVietGiaiTri', 'baiVietTheThao'));
     }
 
     public function theloai()
