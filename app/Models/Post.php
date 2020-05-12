@@ -15,13 +15,10 @@ class Post extends Model
         'title',
         'status_id',
         'type_id',
-        'image',
         'image_url',
-        'thumbnail_image',
-        'noi_bat',
-        'user_id',
-        'tom_tat',
-        'noi_dung',
+        'tag_id',
+        'short_content',
+        'content',
     ];
 
     public function tags()

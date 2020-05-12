@@ -23,6 +23,6 @@ $factory->define(\App\Models\Post::class, function (Faker $faker) {
         'status_id' => random_int(1, 2),
         'type_id' => 1,
         'image_url' => "https://icdn.dantri.com.vn/thumb_w/640/2020/05/10/fauci-2-1589091114474.jpg",
-        'user_id' => 1,
+        'tag_id' => random_int(1, 2),
     ];
 });
