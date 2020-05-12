@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Tag extends Model
 {
-    use SoftDeletes;
-
-    protected $table = 'tags';
+ protected $table = 'tags';
     protected $fillable = [
         'name',
     ];
+public function posts()
+{
+    return $this->hasMany(Post::class);
+}
 }

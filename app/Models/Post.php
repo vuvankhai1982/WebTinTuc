@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
-    use SoftDeletes;
 
     protected $table = 'posts';
     protected $fillable = [
@@ -31,8 +30,4 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function getTagNamesAttribute()
-    {
-        return $this->tags->pluck('name')->implode(', ');
-    }
 }

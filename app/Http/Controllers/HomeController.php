@@ -8,13 +8,17 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-public  function 
+    public function __construct()
+    {
+        $tags=Tag::all();
+        view()->share(compact('tags'));
+    }
+
     public function trangchu()
     {
         $tags=Tag::all();
         $posts=Post::all();
-
-       return view('frontend.trangchu', compact('tags', 'posts'));
+       return view('frontend.trangchu', compact('posts', 'tags'));
     }
 
     public function theloai()

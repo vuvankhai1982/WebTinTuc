@@ -55,13 +55,14 @@
                             <small><a href="category.html"><i>subtitle</i></a>/</small>
                         </h3>
                         <?php
-                        $data=$tag->posts->where('type_id', 1)->sortByDesc('created_at')->take(4);
-                        $dt=$data->shift();
+                        $data= $tag->posts->where('type_id',1)->sortByDesc('created_at')->take(3);
+                        $dt= $data->shift();
                         ?>
                         <div class="col-md-8 border-right">
+
                             <div class="col-md-5">
                                 <a href="detail.html">
-                                    <img class="img-responsive" src="{{$dt['image_url']}}" alt="">
+                                    <img class="img-responsive" src=" {{$dt['image_url']}}" alt="">
                                 </a>
                             </div>
 
@@ -69,6 +70,7 @@
                                 <h3>{{$dt['title']}}</h3>
                                 <p>{{$dt['short_content']}}</p>
                                 <a class="btn btn-primary" href="detail.html">Chi Tiet <span class="glyphicon glyphicon-chevron-right"></span></a>
+
                             </div>
                         </div>
 
