@@ -3,12 +3,12 @@
     <!-- Page Content -->
     <div class="container">
         <div class="row">
-            @include('frontend.menu')
+{{--            @include('frontend.menu')--}}
 
             <div class="col-md-9 ">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="background-color:#337AB7; color:white;">
-                        <h4><b>Danh Sách Bài Viết</b></h4>
+                        <h4><b>{{$tags->name}}</b></h4>
                     </div>
 
                     <div class="row-item row">
@@ -22,8 +22,8 @@
                         </div>
 
                         <div class="col-md-9">
-                            <h3>{{$post->tieu_de}}</h3>
-                            <p>{{$post->tom_tat}}</p>
+                            <h3>{{$post->title}}</h3>
+                            <p>{{$post->short_content}}</p>
                             <a class="btn btn-primary" href="{{route('baiviet')}}">Chi tiet <span class="glyphicon glyphicon-chevron-right"></span></a>
                         </div>
                         <div class="break"></div>
@@ -32,9 +32,9 @@
 
 
                     <!-- Pagination -->
-{{--                    <div class="row">--}}
-{{--                        {{ $posts->links() }}--}}
-{{--                    </div>--}}
+                    <div class="row">
+                        {{ $posts->links() }}
+                    </div>
                     <!-- /.row -->
 
                 </div>

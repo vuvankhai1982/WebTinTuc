@@ -21,13 +21,19 @@ class HomeController extends Controller
        return view('frontend.trangchu', compact('posts', 'tags'));
     }
 
-    public function theloai()
+    public function theloai($id)
     {
-        return view('frontend.theloai');
+        $tags= Tag::find($id);
+        $posts= Post::where('tag_id', $id)->paginate(5);
+        return view('frontend.theloai' ,compact('posts', 'tags'));
     }
 
-    public function baiviet(){
-        return view('frontend.baiviet');
+    public function baiviet($id)
+    {
+      $posts = Post::find($id);
+      $postsNew = Post::where('type_id',1)->take(3)->get();
+      $postsRelated = Post::where('tag_id', $posts->tag_id)->take(3)->get();
+        return view('frontend.baiviet', compact('posts', 'postsNew', 'postsRelated'));
     }
 
     public function lienhe(){

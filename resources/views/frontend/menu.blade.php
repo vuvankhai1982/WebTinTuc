@@ -5,7 +5,7 @@
                 </li>
                 @foreach($tags as $tag)
                 <li href="#" class="list-group-item menu1">
-                    <a href="{{route('theloai')}}">{{$tag->name}}</a>
+                    <a href="theloai/{{$tag->id}}">{{$tag->name}}</a>
                 </li>
               @endforeach
             </ul>

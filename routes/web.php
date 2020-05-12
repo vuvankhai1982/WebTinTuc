@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 Route::get('/', 'HomeController@trangchu')->name('home');
-Route::get('/theloai', 'HomeController@theloai')->name('theloai');
-Route::get('/baiviet', 'HomeController@baiviet')->name('baiviet');
+Route::get('/theloai/{id}', 'HomeController@theloai')->name('theloai');
+Route::get('/baiviet/{id}', 'HomeController@baiviet')->name('baiviet');
 Route::get('/lienhe', 'HomeController@lienhe')->name('lienhe');
 Route::get('/gioithieu', 'HomeController@gioithieu')->name('gioithieu');
 
