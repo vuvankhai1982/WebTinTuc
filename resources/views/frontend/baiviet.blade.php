@@ -39,7 +39,7 @@
                         <!-- item -->
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-md-5">
-                                <a href="detail.html">
+                                <a href="baiviet/{{$lq->id}}">
                                     <img class="img-responsive" src="{{$lq->image_url}}" alt="">
                                 </a>
                             </div>
@@ -61,7 +61,7 @@
                         <!-- item -->
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-md-5">
-                                <a href="detail.html">
+                                <a href="baiviet/{{$nb->id}}">
                                     <img class="img-responsive" src="{{$nb->image_url}}" alt="">
                                 </a>
                             </div>

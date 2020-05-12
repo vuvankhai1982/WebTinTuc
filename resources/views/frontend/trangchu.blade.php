@@ -51,8 +51,8 @@
                     <div class="row-item row">
 
                         <h3>
-                            <a href="category.html">{{$tag->name}}</a>
-                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                            <a href="theloai/{{$tag->id}}">{{$tag->name}}</a>
+{{--                            <small><a href="category.html"><i>subtitle</i></a>/</small>--}}
                         </h3>
                         <?php
                         $data= $tag->posts->where('type_id',1)->sortByDesc('created_at')->take(4);
@@ -61,7 +61,7 @@
                         <div class="col-md-8 border-right">
 
                             <div class="col-md-5">
-                                <a href="detail.html">
+                                <a href="baiviet/{{$dt['id']}}">
                                     <img class="img-responsive" src=" {{$dt['image_url']}}" alt="">
                                 </a>
                             </div>
@@ -69,7 +69,7 @@
                             <div class="col-md-7">
                                 <h3>{{$dt['title']}}</h3>
                                 <p>{{$dt['short_content']}}</p>
-                                <a class="btn btn-primary" href="detail.html">Chi Tiet <span class="glyphicon glyphicon-chevron-right"></span></a>
+                                <a class="btn btn-primary" href="baiviet/{{$dt['id']}}">Chi Tiet <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                             </div>
                         </div>
@@ -77,7 +77,7 @@
 
                         <div class="col-md-4">
                             @foreach($data->all() as $posts)
-                            <a href="detail.html">
+                            <a href="baiviet/{{$posts['id']}}">
                                 <h4>
                                     <span class="glyphicon glyphicon-list-alt"></span>
                                     {{$posts['title']}}
