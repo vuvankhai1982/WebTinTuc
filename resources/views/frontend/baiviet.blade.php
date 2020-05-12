@@ -14,7 +14,7 @@
 
                 <!-- Author -->
                 <p class="lead">
-                    by <a href="#">Start Bootstrap</a>
+                    by <a href="#">{{$posts->short_content}}</a>
                 </p>
 
                 <!-- Preview Image -->
@@ -46,7 +46,7 @@
                             <div class="col-md-7">
                                 <a href="#"><b>{{$lq->title}}</b></a>
                             </div>
-                            <p>{{$lq->short_content}}</p>
+                            <p style="padding-left: 15px;">{{$lq->short_content}}</p>
                             <div class="break"></div>
                         </div>
                         <!-- end item -->
@@ -68,7 +68,7 @@
                             <div class="col-md-7">
                                 <a href="#"><b>{{$nb->title}}</b></a>
                             </div>
-                            <p>{{$nb->short_content}}</p>
+                            <p style="padding-left: 15px;">{{$nb->short_content}}</p>
                             <div class="break"></div>
                         </div>
                         <!-- end item -->
