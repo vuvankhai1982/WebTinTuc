@@ -55,7 +55,7 @@
                             <small><a href="category.html"><i>subtitle</i></a>/</small>
                         </h3>
                         <?php
-                        $data= $tag->posts->where('type_id',1)->sortByDesc('created_at')->take(3);
+                        $data= $tag->posts->where('type_id',1)->sortByDesc('created_at')->take(4);
                         $dt= $data->shift();
                         ?>
                         <div class="col-md-8 border-right">
@@ -76,33 +76,14 @@
 
 
                         <div class="col-md-4">
+                            @foreach($data->all() as $posts)
                             <a href="detail.html">
                                 <h4>
                                     <span class="glyphicon glyphicon-list-alt"></span>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    {{$posts['title']}}
                                 </h4>
                             </a>
-
-                            <a href="detail.html">
-                                <h4>
-                                    <span class="glyphicon glyphicon-list-alt"></span>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                </h4>
-                            </a>
-
-                            <a href="detail.html">
-                                <h4>
-                                    <span class="glyphicon glyphicon-list-alt"></span>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                </h4>
-                            </a>
-
-                            <a href="detail.html">
-                                <h4>
-                                    <span class="glyphicon glyphicon-list-alt"></span>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                </h4>
-                            </a>
+                            @endforeach
                         </div>
 
                         <div class="break"></div>
