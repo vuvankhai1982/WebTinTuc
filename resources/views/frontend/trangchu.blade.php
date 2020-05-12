@@ -39,19 +39,73 @@
 
     <div class="row main-left">
        @include('frontend.menu')
-
         <div class="col-md-9">
-            <?php
-                $moiNhat = $baiVietGiaoDuc->slice(0, 1)->first();
-                $baiVietNoiBat = $baiVietGiaoDuc->slice(1);
-            ?>
-            <div class="row"> <h2>{{ $giaoDucTag->name }}</h2></div>
-            <div class="row">
-                <div class="col-md-9"> {{$moiNhat->title}}</div>
-                <div  class="col-md-3">
-                    @foreach($baiVietNoiBat as $key => $baiviet)
-                        {{ $loop->index }} :
-                        {{ $baiviet->title }} <br>
+            <div class="panel panel-default">
+                <div class="panel-heading" style="background-color:#337AB7; color:white;" >
+                    <h2 style="margin-top:0px; margin-bottom:0px;">Laravel Tin Tức</h2>
+                </div>
+
+                <div class="panel-body">
+                @foreach($tags as $tag)
+                    <!-- item -->
+                    <div class="row-item row">
+
+                        <h3>
+                            <a href="category.html">{{$tag->name}}</a>
+                            <small><a href="category.html"><i>subtitle</i></a>/</small>
+                        </h3>
+                        <?php
+                        $data=$tag->posts->where('type_id', 1)->sortByDesc('created_at')->take(4);
+                        $dt=$data->shift();
+                        ?>
+                        <div class="col-md-8 border-right">
+                            <div class="col-md-5">
+                                <a href="detail.html">
+                                    <img class="img-responsive" src="{{$dt['image_url']}}" alt="">
+                                </a>
+                            </div>
+
+                            <div class="col-md-7">
+                                <h3>{{$dt['title']}}</h3>
+                                <p>{{$dt['short_content']}}</p>
+                                <a class="btn btn-primary" href="detail.html">Chi Tiet <span class="glyphicon glyphicon-chevron-right"></span></a>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <a href="detail.html">
+                                <h4>
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </h4>
+                            </a>
+
+                            <a href="detail.html">
+                                <h4>
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </h4>
+                            </a>
+
+                            <a href="detail.html">
+                                <h4>
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </h4>
+                            </a>
+
+                            <a href="detail.html">
+                                <h4>
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </h4>
+                            </a>
+                        </div>
+
+                        <div class="break"></div>
+                    </div>
+                    <!-- end item -->
                     @endforeach
                 </div>
             </div>

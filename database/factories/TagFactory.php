@@ -1,8 +1,10 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+/** @var Factory $factory */
 
+use App\Models\Tag;
 use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factory;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +17,8 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(\App\Models\Post::class, function (Faker $faker) {
+$factory->define(Tag::class, function (Faker $faker) {
     return [
-        'title' => $faker->text(50),
-        'short_content' => $faker->text(100),
-        'content' => $faker->text(500),
-        'status_id' => random_int(1, 2),
-        'type_id' => 1,
-        'image_url' => "https://icdn.dantri.com.vn/thumb_w/640/2020/05/10/fauci-2-1589091114474.jpg",
-        'tag_id' => random_int(1, 3),
+        'name' => $faker->text(10),
     ];
 });

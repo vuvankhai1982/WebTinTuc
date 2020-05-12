@@ -10,13 +10,8 @@ class TagsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run(){
-        DB::table('tags')->insert([
-            ['name' => 'Giải Trí'],
-            ['name' => 'Giáo Dục'],
-            ['name' => 'Thể Thao'],
-        ]);
+    public function run()
+    {
+        factory(Tag::class, 4)->create();
     }
-
-
 }

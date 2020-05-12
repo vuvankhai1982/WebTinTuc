@@ -12,9 +12,9 @@ return [
             'Công bố' => 2,
         ],
         'types' => [
-            'Bài viết' => 1,
+            'tin moi' => 1,
             'Giới thiệu' => 2,
-            'Liên hệ' => 3,
+
         ],
     ],
 ];

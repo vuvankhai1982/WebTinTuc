@@ -8,26 +8,13 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function __construct()
-    {
-        $tags=Tag::all();
-        view()->share(compact('tags'));
-        $posts=Post::all();
-        view()->share(compact('posts'));
-    }
-
+public  function 
     public function trangchu()
     {
-        $giaoDucTag = Tag::find(2);
-        $baiVietGiaoDuc = Post::whereHas('tags', function ($query) {
-            $query->where('tag_id', 2);
-        })->orderBy('created_at', 'desc')->limit(4)->get();
+        $tags=Tag::all();
+        $posts=Post::all();
 
-        $baiVietGiaiTri = Post::whereHas('tags', function ($query) {
-            $query->where('tag_id', 1);
-        })->orderBy('created_at', 'desc')->limit(4)->get();
-
-        return view('frontend.trangchu', compact('baiVietGiaoDuc', 'baiVietGiaiTri', 'giaoDucTag'));
+       return view('frontend.trangchu', compact('tags', 'posts'));
     }
 
     public function theloai()
