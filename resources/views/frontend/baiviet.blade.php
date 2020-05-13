@@ -39,12 +39,12 @@
                         <!-- item -->
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-md-5">
-                                <a href="baiviet/{{$lq->id}}">
+                                <a href="{{$lq->id}}">
                                     <img class="img-responsive" src="{{$lq->image_url}}" alt="">
                                 </a>
                             </div>
                             <div class="col-md-7">
-                                <a href="#"><b>{{$lq->title}}</b></a>
+                                <a href="{{$lq->id}}"><b>{{$lq->title}}</b></a>
                             </div>
                             <p style="padding-left: 15px;">{{$lq->short_content}}</p>
                             <div class="break"></div>
@@ -61,12 +61,12 @@
                         <!-- item -->
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-md-5">
-                                <a href="baiviet/{{$nb->id}}">
+                                <a href="{{$nb->id}}">
                                     <img class="img-responsive" src="{{$nb->image_url}}" alt="">
                                 </a>
                             </div>
                             <div class="col-md-7">
-                                <a href="#"><b>{{$nb->title}}</b></a>
+                                <a href="{{$nb->id}}"><b>{{$nb->title}}</b></a>
                             </div>
                             <p style="padding-left: 15px;">{{$nb->short_content}}</p>
                             <div class="break"></div>

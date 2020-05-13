@@ -15,7 +15,7 @@
                         @foreach($posts as $post)
                         <div class="col-md-3">
 
-                            <a href="baiviet/{{$post->id}}">
+                            <a href="{{route('baiviet', $post->id)}}">
                                 <br>
                                 <img width="200px" height="200px" class="img-responsive" src="{{$post->image_url}}" alt="">
                             </a>
@@ -24,7 +24,7 @@
                         <div class="col-md-9">
                             <h3>{{$post->title}}</h3>
                             <p>{{$post->short_content}}</p>
-                            <a class="btn btn-primary" href="baiviet/{{$post->id}}">Chi tiet <span class="glyphicon glyphicon-chevron-right"></span></a>
+                            <a class="btn btn-primary" href="{{route('baiviet', $post->id)}}">Chi tiet <span class="glyphicon glyphicon-chevron-right"></span></a>
                         </div>
                         <div class="break"></div>
                             @endforeach
