@@ -35,11 +35,11 @@
                         <tbody>
                             @foreach($posts as $post)
                                 <tr>
-                                    <td>#{{ $post->id }}</td>
-                                    <td><img src="{{ $post->image }}" alt="" style="width: 150px"></td>
-                                    <td>{{ $post->tieu_de }}</td>
+                                    <td>{{ $post->id }}</td>
+                                    <td><img src="{{ $post->image_url }}" alt="" style="width: 150px"></td>
+                                    <td>{{ $post->title }}</td>
                                     <td>{{ array_flip(config('constant.post.status'))[$post->status_id] ?? '' }}</td>
-                                    <td>{{ $post->tagNames }}</td>
+                                    <td>{{ $post->tag_id }}</td>
                                     <td style="width: 100px">
                                         <a href="{{ route('admin.posts.edit', $post->id) }}" style="margin-bottom: 5px" class="btn btn-sm btn-warning glyphicon glyphicon-pencil">
                                             <span><i class="fas fa-edit"></i></span>&nbsp; Sửa

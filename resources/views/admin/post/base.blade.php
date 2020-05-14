@@ -13,7 +13,7 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Tiêu đề</label>
                         <div class="col-sm-10">
-                            {{ Form::text('title', $post->tieu_de, ['class' => 'form-control']) }}
+                            {{ Form::text('title', $post->title, ['class' => 'form-control']) }}
                             @error('title')
                             <div class="error text-red">{{ $message }}</div>
                             @enderror
@@ -21,16 +21,17 @@
                     </div>
 
                     @if(!isset($isSpecialPost))
-                    <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Ảnh đại diện</label>
-                        <div class="col-sm-10">
-                            {{ Form::text('image', $post->image, ['class' => 'form-control', 'placeholder' => 'https://i.imgur.com/VPAMSDP.jpg']) }}
-                            @error('image')
-                            <div class="error text-red">{{ $message }}</div>
-                            @enderror
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Ảnh đại diện</label>
+                            <div class="col-sm-10">
+                                {{ Form::text('image_url', $post->image_url, ['class' => 'form-control', 'placeholder' => 'https://i.imgur.com/VPAMSDP.jpg']) }}
+                                @error('image_url')
+                                <div class="error text-red">{{ $message }}</div>
+                                @enderror
+                            </div>
                         </div>
-                    </div>
                     @endif
+
 
                     <div class="form-group row" style="{{ !isset($isSpecialPost) ? '' : 'display: none' }}">
                         <label class="col-sm-2 col-form-label">Trạng thái</label>
@@ -47,11 +48,11 @@
                         <label class="col-sm-2 col-form-label">Tags</label>
                         <div class="col-sm-10">
                             @php
-                                $tagIdsOfPost = $tagsOfPost->pluck('id')->all();
+                                $tagId = $post->pluck('id')->all();
                             @endphp
                             <select class="basic-multiple form-control" name="tags[]" multiple="multiple">
                                 @foreach($tags as $tag)
-                                    <option {{ in_array($tag->id, $tagIdsOfPost) ? "selected='selected'" : ''}} value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                    <option {{ in_array($tag->id,  $tagId) ? "selected='selected'" : ''}} value="{{ $tag->id}}">{{ $tag->name}}</option>
                                 @endforeach
                             </select>
                             @error('tags[]')
@@ -67,7 +68,7 @@
                     <div class="form-group row">
                         <label class="col-sm-1 col-form-label">Mô tả ngắn gọn</label>
                         <div class="col-sm-11">
-                            {{ Form::textarea('short_content', $post->tom_tat, ['class' => 'short-description form-control']) }}
+                            {{ Form::textarea('short_content', $post->short_content, ['class' => 'short-description form-control']) }}
                             @error('short_content')
                             <div class="error text-red">{{ $message }}</div>
                             @enderror
@@ -80,7 +81,7 @@
                     <div class="form-group row">
                         <label class="col-sm-1 col-form-label">Nội dung</label>
                         <div class="col-sm-11">
-                            {{ Form::textarea('content', $post->noi_dung, ['class' => 'detail-description form-control']) }}
+                            {{ Form::textarea('content', $post->content, ['class' => 'detail-description form-control']) }}
                             @error('content')
                             <div class="error text-red">{{ $message }}</div>
                             @enderror

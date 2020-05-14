@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->longText('content');
             $table->string('image_url');
             $table->integer('status_id');
-            $table->integer('type_id');
+            $table->unsignedTinyInteger('type_id');
             $table->integer('tag_id')->unsigned();
             $table->foreign('tag_id')->references('id')->on('tags');
 
