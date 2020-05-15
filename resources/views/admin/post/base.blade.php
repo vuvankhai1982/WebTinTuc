@@ -6,6 +6,11 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
+            @if(session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session()->get('message') }}
+                </div>
+            @endif
             {{ Form::open(array('url' => $route, 'method' => $method, 'enctype' => 'multipart/form-data','class' => '')) }}
             {{ Form::hidden('id', $post->id, ['class' => 'form-control']) }}
             <div class="card-body row">
@@ -42,6 +47,7 @@
                             @enderror
                         </div>
                     </div>
+
 
                     @if(!isset($isSpecialPost))
                     <div class="form-group row">

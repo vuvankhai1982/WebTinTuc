@@ -35,13 +35,30 @@ class PostController extends Controller
         return response()->view('admin.post.create', compact('post','tags'));
     }
 
+//    public function store(Request $request)
+//    {
+//        $request['type_id'] = config('constant.post.types.tao moi');
+//      $post= Post::create($request->all());
+//
+////        $this->updatePost($post, $request);
+//
+//        return redirect()->route('admin.posts.index', $post->id)->withSuccess('Tạo mới bài viết thành công!');
+//    }
+
     public function store(Request $request)
     {
+        $request->validate([
+            'title'=> 'required',
+            'status_id'=> 'required',
+            'type_id'=> 'required',
+            'image_url'=> 'required',
+            'tag_id'=> 'required',
+            'short_content'=> 'required',
+            'content'=> 'required',
 
-      $post= Post::create($request->all());
 
-//        $this->updatePost($post, $request);
-
+        ]);
+       $post = Post::create($request->all());
         return redirect()->route('admin.posts.index', $post->id)->withSuccess('Tạo mới bài viết thành công!');
     }
 
@@ -57,14 +74,15 @@ class PostController extends Controller
 //        $this->updatePost($post, $request);
         $post->update($request->all());
 
-        return redirect()->back()->withSuccess('Lưu bài viết thành công!');
+//        return redirect()->back()->withSuccess('Lưu bài viết thành công!');
+        return back()->with('message', 'Lưu bài viết thành công');
     }
 
     public function destroy(Post $post)
     {
         $post->delete();
-
-        return redirect()->back()->withSuccess('Xóa bài viết thành công!');
+        return back()->with('message', 'Xóa bài viết thành công!');
+//        return redirect()->back()->withSuccess('Xóa bài viết thành công!');
     }
 
 //    private function updatePost(Post $post, Request $request)
