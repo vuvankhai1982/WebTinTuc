@@ -12,7 +12,7 @@ return [
             'Công bố' => 2,
         ],
         'types' => [
-            'tin moi' => 1,
+            'Bài viết' => 1,
             'Giới thiệu' => 2,
 
         ],
