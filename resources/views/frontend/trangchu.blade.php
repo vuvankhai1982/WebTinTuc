@@ -68,7 +68,7 @@
 
                             <div class="col-md-7">
                                 <h3>{{$dt['title']}}</h3>
-                                <p>{{$dt['short_content']}}</p>
+                                <p>{!!$dt['short_content']!!}</p>
                                 <a class="btn btn-primary" href="baiviet/{{$dt['id']}}">Chi Tiet <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                             </div>

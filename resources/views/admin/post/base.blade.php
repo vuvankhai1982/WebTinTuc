@@ -37,7 +37,6 @@
                         </div>
                     @endif
 
-
                     <div class="form-group row" style="{{ !isset($isSpecialPost) ? '' : 'display: none' }}">
                         <label class="col-sm-2 col-form-label">Trạng thái</label>
                         <div class="col-sm-10">
@@ -53,12 +52,9 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Tags</label>
                         <div class="col-sm-10">
-                            @php
-                                $tagId = $post->pluck('id')->all();
-                            @endphp
-                            <select class="basic-multiple form-control" name="tags[]" multiple="multiple">
+                            <select class="select2 form-control" name="tag_id">
                                 @foreach($tags as $tag)
-                                    <option {{ in_array($tag->id,  $tagId) ? "selected='selected'" : ''}} value="{{ $tag->id}}">{{ $tag->name}}</option>
+                                    <option {{ $tag->id == $post->tag_id  ? "selected='selected'" : ''}} value="{{ $tag->id}}">{{ $tag->name}}</option>
                                 @endforeach
                             </select>
                             @error('tags[]')
@@ -138,6 +134,8 @@
                     };
                 }
             });
+
+            $('.select2').select2();
 
         })
     </script>

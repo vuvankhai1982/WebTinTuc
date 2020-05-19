@@ -14,7 +14,6 @@ return [
         'types' => [
             'Bài viết' => 1,
             'Giới thiệu' => 2,
-
         ],
     ],
 ];

@@ -50,15 +50,20 @@ class PostController extends Controller
         $request->validate([
             'title'=> 'required',
             'status_id'=> 'required',
-            'type_id'=> 'required',
+//            'type_id'=> 'required',
             'image_url'=> 'required',
             'tag_id'=> 'required',
             'short_content'=> 'required',
             'content'=> 'required',
-
-
         ]);
-       $post = Post::create($request->all());
+
+        $data = array_merge(
+            $request->all(),
+            ['type_id' => config('constant.post.types.Bài viết')]
+        );
+
+        $post = Post::create($data);
+
         return redirect()->route('admin.posts.index', $post->id)->withSuccess('Tạo mới bài viết thành công!');
     }
 

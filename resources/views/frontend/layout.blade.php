@@ -13,7 +13,7 @@
     <link href="/frontend/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Core CSS -->
     <link href="/frontend/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="/frontend/css/shop-homepage.css" rel="stylesheet">
     <link href="/frontend/css/my.css" rel="stylesheet">

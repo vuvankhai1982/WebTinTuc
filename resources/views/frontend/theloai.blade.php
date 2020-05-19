@@ -23,7 +23,7 @@
 
                         <div class="col-md-9">
                             <h3>{{$post->title}}</h3>
-                            <p>{{$post->short_content}}</p>
+                            <p>{!!$post->short_content!!}</p>
                             <a class="btn btn-primary" href="{{route('baiviet', $post->id)}}">Chi tiet <span class="glyphicon glyphicon-chevron-right"></span></a>
                         </div>
                         <div class="break"></div>
