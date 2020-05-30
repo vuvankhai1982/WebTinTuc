@@ -40,16 +40,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{route('home')}}" style="color: red">Web Tin Tức</a>
+            <a class="navbar-brand" href="{{route('home')}}" style="color: white">Web Tin Tức</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="{{route('gioithieu')}}" style="color: red">Giới thiệu</a>
+                    <a href="{{route('gioithieu')}}" style="color: white">Giới thiệu</a>
                 </li>
                 <li>
-                    <a href="{{route('lienhe')}}" style="color: red">Liên hệ</a>
+                    <a href="{{route('lienhe')}}" style="color: white">Liên hệ</a>
                 </li>
             </ul>
 

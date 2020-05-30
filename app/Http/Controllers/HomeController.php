@@ -26,7 +26,7 @@ class HomeController extends Controller
         $tags = Tag::find($id);
         $posts = Post::where('tag_id', $id)->paginate(5);
 
-        return view('frontend.theloai', compact('posts', 'tags'));
+        return view('frontend.theloai ', compact('posts', 'tags'));
     }
 
     public function baiviet($id)
