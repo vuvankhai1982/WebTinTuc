@@ -45,9 +45,11 @@ class AwsDanTri extends Command
             $a = $t->find("a", 0);
             $title = $a->attr["title"];
             $href = $a->href;
-            $source_id = $t->find("div", 0)->attr["data-id"];
+
             $img = $a->find("img", 0)->src;
             $short_content = $t->find("div.mr1 div", 0);
+            $div = $t->find("div", 0);
+            $source_id = $div->attr["data-id"];
             $data = [
                 'title' => $title,
                 'image_url' => $img,
@@ -65,7 +67,6 @@ class AwsDanTri extends Command
 //            }
             Post::create($data);
         }
-
 
         print ("lay du lieu thanh cong" . "\n");
     }
