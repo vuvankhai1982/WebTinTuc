@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\Post;
 use Illuminate\Console\Command;
+use Illuminate\Database\Eloquent\Model;
 
 class AwsDanTri extends Command
 {
@@ -44,16 +45,28 @@ class AwsDanTri extends Command
             $a = $t->find("a", 0);
             $title = $a->attr["title"];
             $href = $a->href;
+            $source_id = $t->find("div", 0)->attr["data-id"];
             $img = $a->find("img", 0)->src;
             $short_content = $t->find("div.mr1 div", 0);
-
             $data = [
                 'title' => $title,
                 'image_url' => $img,
                 'short_content' => $short_content,
+                'content' => $href,
+                'source_id' => $source_id,
+                'tag_id' => 2,
+                'status_id' => 2,
+                'type_id' => 2,
             ];
-            Post::created($data);
-            print ("lay du lieu thanh cong" . "\n");
-            }
+//            /** @var Model $post */
+//            $isExisting = Post::where('source_id', $id)->get()->first();
+//            if (!$isExisting) {
+//
+//            }
+            Post::create($data);
+        }
+
+
+        print ("lay du lieu thanh cong" . "\n");
     }
 }
