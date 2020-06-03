@@ -44,8 +44,9 @@ class AwsDanTri extends Command
         foreach ($tins as $t) {
             $a = $t->find("a", 0);
             $title = $a->attr["title"];
-            $href = $a->href;
-
+//            $href = $a->href;
+            $ct = "https://dantri.com.vn" . $href = $a->href;
+            $content = file_get_html($ct)->find("div#divNewsContent",0);
             $img = $a->find("img", 0)->src;
             $short_content = $t->find("div.mr1 div", 0);
             $div = $t->find("div", 0);
@@ -54,7 +55,7 @@ class AwsDanTri extends Command
                 'title' => $title,
                 'image_url' => $img,
                 'short_content' => $short_content,
-                'content' => $href,
+                'content' => $content,
                 'source_id' => $source_id,
                 'tag_id' => 2,
                 'status_id' => 2,
