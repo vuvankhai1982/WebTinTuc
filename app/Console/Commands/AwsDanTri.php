@@ -58,16 +58,19 @@ class AwsDanTri extends Command
                 'source_id' => $source_id,
                 'tag_id' => 2,
                 'status_id' => 2,
-                'type_id' => 2,
+                'type_id' => 1,
             ];
-//            /** @var Model $post */
-//            $isExisting = Post::where('source_id', $id)->get()->first();
-//            if (!$isExisting) {
-//
-//            }
-            Post::create($data);
+            /** @var Model $post */
+            $isExisting = Post::where('source_id', $source_id)->first();
+            if (!$isExisting) {
+                Post::create($data);
+                print ("lay du lieu thanh cong" . "\n");
+            }
+            else {
+                print ("khong co gi de tao" . "\n");
+            }
+
         }
 
-        print ("lay du lieu thanh cong" . "\n");
     }
 }
