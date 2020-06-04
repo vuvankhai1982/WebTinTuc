@@ -44,9 +44,19 @@ class AwsDanTri extends Command
         foreach ($tins as $t) {
             $a = $t->find("a", 0);
             $title = $a->attr["title"];
-//            $href = $a->href;
-            $ct = "https://dantri.com.vn" . $href = $a->href;
-            $content = file_get_html($ct)->find("div#divNewsContent",0);
+            $href = $a->href;
+//            $ct = "https://dantri.com.vn" . $href;
+//            $content = file_get_html($ct)->find("div#divNewsContent", 0);
+            $ct = "https://dantri.com.vn" . $href;
+            if(strpos($href, 'https://') !== 0) {
+//                $ct;
+                $contents = file_get_html($ct);
+                $content = $contents->find("div#divNewsContent", 0);
+            } else {
+//                $href;
+                $contents = file_get_html($href);
+                 $content = $contents->find("div.detail-content", 0);
+            }
             $img = $a->find("img", 0)->src;
             $short_content = $t->find("div.mr1 div", 0);
             $div = $t->find("div", 0);
@@ -62,7 +72,7 @@ class AwsDanTri extends Command
                 'type_id' => 1,
             ];
             /** @var Model $post */
-            $isExisting = Post::where('source_id', $source_id)->first();
+            $isExisting = Post::where('source_id', $source_id)->get()->first();
             if (!$isExisting) {
                 Post::create($data);
                 print ("lay du lieu thanh cong" . "\n");
