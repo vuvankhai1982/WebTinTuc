@@ -25,6 +25,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
+        $schedule->command('aws:dantri')->everyMinutes(); // command sẽ chạy mỗi phút 1 lần
     }
 
     /**

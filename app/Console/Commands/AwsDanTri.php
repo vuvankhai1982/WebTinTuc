@@ -39,7 +39,7 @@ class AwsDanTri extends Command
      */
     public function handle()
     {
-        $html = file_get_html("https://dantri.com.vn/giai-tri.htm");
+        $html = file_get_html("https://dantri.com.vn/xa-hoi.htm");
         $tins = $html->find("[data-boxtype='timelineposition']");
         foreach ($tins as $t) {
             $a = $t->find("a", 0);
@@ -48,7 +48,7 @@ class AwsDanTri extends Command
 //            $ct = "https://dantri.com.vn" . $href;
 //            $content = file_get_html($ct)->find("div#divNewsContent", 0);
             $ct = "https://dantri.com.vn" . $href;
-            if(strpos($href, 'https://') !== 0) {
+            if(strpos($href, 'https://') == false) {
 //                $ct;
                 $contents = file_get_html($ct);
                 $content = $contents->find("div#divNewsContent", 0);
@@ -67,7 +67,7 @@ class AwsDanTri extends Command
                 'short_content' => $short_content,
                 'content' => $content,
                 'source_id' => $source_id,
-                'tag_id' => 4,
+                'tag_id' => 2,
                 'status_id' => 2,
                 'type_id' => 1,
             ];
