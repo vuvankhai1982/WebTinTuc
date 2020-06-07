@@ -47,39 +47,38 @@ class AwsDanTri extends Command
             $href = $a->href;
 //            $ct = "https://dantri.com.vn" . $href;
 //            $content = file_get_html($ct)->find("div#divNewsContent", 0);
-            $ct = "https://dantri.com.vn" . $href;
-            if(strpos($href, 'https://') == false) {
-//                $ct;
-                $contents = file_get_html($ct);
-                $content = $contents->find("div#divNewsContent", 0);
-            } else {
+                $ct = "https://dantri.com.vn" . $href;
+                if (strpos($href, 'https://') == false) {
+                    $contents = file_get_html($ct);
+                    $content = $contents->find("div#divNewsContent", 0);
+                } else {
 //                $href;
-                $contents = file_get_html($href);
-                 $content = $contents->find("div.detail-content", 0);
-            }
-            $img = $a->find("img", 0)->src;
-            $short_content = $t->find("div.mr1 div", 0)->plaintext;
-            $div = $t->find("div", 0);
-            $source_id = $div->attr["data-id"];
-            $data = [
-                'title' => $title,
-                'image_url' => $img,
-                'short_content' => $short_content,
-                'content' => $content,
-                'source_id' => $source_id,
-                'tag_id' => 2,
-                'status_id' => 2,
-                'type_id' => 1,
-            ];
-            /** @var Model $post */
-            $isExisting = Post::where('source_id', $source_id)->get()->first();
-            if (!$isExisting) {
-                Post::create($data);
-                print ("lay du lieu thanh cong" . "\n");
-            }
-            else {
-                print ("khong co gi de tao" . "\n");
-            }
+                    $contents = file_get_html($href);
+                    $content = $contents->find("div.detail-content", 0);
+                }
+                $img = $a->find("img", 0)->src;
+                $short_content = $t->find("div.mr1 div", 0)->plaintext;
+                $div = $t->find("div", 0);
+                $source_id = $div->attr["data-id"];
+                $data = [
+                    'title' => $title,
+                    'image_url' => $img,
+                    'short_content' => $short_content,
+                    'content' => $content,
+                    'source_id' => $source_id,
+                    'tag_id' => 2,
+                    'status_id' => 2,
+                    'type_id' => 1,
+                ];
+                /** @var Model $post */
+                $isExisting = Post::where('source_id', $source_id)->get()->first();
+                if (!$isExisting) {
+                    Post::create($data);
+                    print ("lay du lieu thanh cong" . "\n");
+                }
+                else {
+                    print ("khong co gi de tao" . "\n");
+                }
 
         }
 
